@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TecnoGamesBR | Os Menores Preços em Games</title>
+<title>TecnoGamesBR | Games com os Menores Preços</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,45 +17,68 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
 
-background:#090909;
-color:white;
+background:#070707;
+color:#fff;
 
 }
 
 header{
 
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+padding:20px 8%;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
 
-padding:20px 10%;
+background:rgba(0,0,0,.75);
 
-background:#111;
+backdrop-filter:blur(12px);
 
-position:sticky;
-top:0;
+border-bottom:1px solid rgba(255,255,255,.08);
 
-z-index:100;
+z-index:999;
 
 }
 
 .logo{
 
-font-size:30px;
+font-size:32px;
+
 font-weight:800;
 
-color:#8d4bff;
+letter-spacing:1px;
 
 }
 
 .logo span{
 
-color:#00cfff;
+color:#8d3bff;
+
+}
+
+nav{
+
+display:flex;
+
+gap:35px;
 
 }
 
@@ -62,7 +88,7 @@ color:white;
 
 text-decoration:none;
 
-margin-left:25px;
+font-weight:500;
 
 transition:.3s;
 
@@ -70,13 +96,39 @@ transition:.3s;
 
 nav a:hover{
 
-color:#8d4bff;
+color:#8d3bff;
+
+}
+
+.botao-topo{
+
+background:#8d3bff;
+
+padding:12px 24px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.botao-topo:hover{
+
+background:#9d57ff;
+
+transform:translateY(-2px);
 
 }
 
 .hero{
 
-height:90vh;
+min-height:100vh;
 
 display:flex;
 
@@ -84,19 +136,33 @@ justify-content:center;
 
 align-items:center;
 
-flex-direction:column;
-
 text-align:center;
 
-background:linear-gradient(135deg,#090909,#15062f);
+padding:0 10%;
+
+background:
+
+radial-gradient(circle at top,#5121b4 0%,transparent 40%),
+
+linear-gradient(#090909,#090909);
 
 }
 
 .hero h1{
 
-font-size:65px;
+font-size:68px;
+
+font-weight:800;
+
+line-height:1.1;
 
 margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+color:#8d3bff;
 
 }
 
@@ -104,59 +170,133 @@ margin-bottom:20px;
 
 font-size:22px;
 
-opacity:.8;
+opacity:.85;
+
+max-width:800px;
+
+margin:auto;
 
 margin-bottom:40px;
 
 }
 
-button{
+.botoes{
 
-padding:18px 40px;
+display:flex;
 
-border:none;
+justify-content:center;
 
-border-radius:8px;
+gap:20px;
 
-background:#8d4bff;
+flex-wrap:wrap;
 
-color:white;
+}
 
-font-size:20px;
+.btn{
 
-cursor:pointer;
+padding:18px 36px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:700;
 
 transition:.3s;
 
 }
 
-button:hover{
+.btn-principal{
 
-transform:scale(1.05);
+background:#8d3bff;
 
-background:#a76bff;
-
-}
-
-section{
-
-padding:80px 10%;
+color:white;
 
 }
 
-.titulo{
+.btn-principal:hover{
 
-font-size:35px;
+transform:translateY(-4px);
 
-margin-bottom:35px;
+}
+
+.btn-secundario{
+
+border:2px solid #8d3bff;
+
+color:white;
+
+}
+
+.btn-secundario:hover{
+
+background:#8d3bff;
+
+}
+
+.info{
+
+padding:60px 8%;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+background:#111;
+
+}
+
+.info-box{
+
+background:#171717;
+
+padding:30px;
+
+border-radius:12px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.05);
+
+}
+
+.info-box h3{
+
+margin-bottom:15px;
+
+font-size:20px;
+
+}
+
+.info-box p{
+
+opacity:.75;
 
 }
 
 .produtos{
 
+padding:80px 8%;
+
+}
+
+.titulo{
+
+font-size:42px;
+
+margin-bottom:40px;
+
+text-align:center;
+
+}
+
+.grid{
+
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
 gap:30px;
 
@@ -166,23 +306,23 @@ gap:30px;
 
 background:#151515;
 
-border-radius:15px;
+padding:25px;
 
-padding:20px;
+border-radius:16px;
 
 transition:.3s;
 
-text-align:center;
+border:1px solid rgba(255,255,255,.05);
 
-border:1px solid #2b2b2b;
+text-align:center;
 
 }
 
 .card:hover{
 
-transform:translateY(-10px);
+transform:translateY(-8px);
 
-border:1px solid #8d4bff;
+border-color:#8d3bff;
 
 }
 
@@ -190,7 +330,7 @@ border:1px solid #8d4bff;
 
 width:100%;
 
-height:180px;
+height:250px;
 
 object-fit:contain;
 
@@ -198,13 +338,13 @@ margin-bottom:20px;
 
 }
 
-.card h3{
+.card h2{
 
-margin-bottom:10px;
+margin-bottom:15px;
 
 }
 
-.preco-antigo{
+.antigo{
 
 text-decoration:line-through;
 
@@ -214,25 +354,47 @@ color:#999;
 
 .preco{
 
-font-size:28px;
+font-size:38px;
 
-color:#00ff88;
+font-weight:800;
 
-font-weight:bold;
+color:#00ff84;
 
 margin:10px 0;
 
 }
 
-footer{
+.parcela{
 
-padding:40px;
+opacity:.8;
 
-text-align:center;
+margin-bottom:20px;
 
-background:#111;
+}
 
-margin-top:80px;
+.reserva{
+
+display:inline-block;
+
+padding:14px 28px;
+
+background:#8d3bff;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:700;
+
+margin-top:15px;
+
+}
+
+.reserva:hover{
+
+background:#9d57ff;
 
 }
 
@@ -254,101 +416,199 @@ TECNO<span>GAMESBR</span>
 
 <a href="#">Início</a>
 
-<a href="#">Promoções</a>
+<a href="#produtos">Produtos</a>
 
-<a href="#">PC Gamer</a>
-
-<a href="#">Consoles</a>
+<a href="#">Pré-venda</a>
 
 <a href="#">Contato</a>
 
 </nav>
 
+<a href="#" class="botao-topo">
+
+🛒 Carrinho
+
+</a>
+
 </header>
 
 <section class="hero">
 
-<h1>OS MENORES PREÇOS EM GAMES</h1>
+<div>
 
-<p>Garanta sua pré-compra antes que o estoque acabe.</p>
+<h1>
 
-<button>GARANTIR MINHA PRÉ-COMPRA</button>
+Os Menores Preços em <span>Games</span>
+
+</h1>
+
+<p>
+
+Garanta seu console antes que o estoque acabe.
+Faça sua pré-compra hoje e aproveite nossas ofertas.
+
+</p>
+
+<div class="botoes">
+
+<a href="#produtos" class="btn btn-principal">
+
+Garantir Minha Pré-compra
+
+</a>
+
+<a href="#" class="btn btn-secundario">
+
+Ver Promoções
+
+</a>
+
+</div>
+
+</div>
 
 </section>
 
-<section>
+<section class="info">
 
-<h2 class="titulo">
+<div class="info-box">
+
+<h3>🔒 Compra Segura</h3>
+
+<p>Pagamento protegido via gateway.</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>💳 Pix e Cartão</h3>
+
+<p>Aceitamos Pix, Visa, Mastercard e Elo.</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🚚 Entrega Nacional</h3>
+
+<p>Enviamos para todo o Brasil.</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>⭐ Atendimento Premium</h3>
+
+<p>Suporte rápido via WhatsApp.</p>
+
+</div>
+
+</section>
+
+<section class="produtos" id="produtos">
+
+<h1 class="titulo">
 
 🔥 Promoções da Semana
 
-</h2>
+</h1>
 
-<div class="produtos">
+<div class="grid">
+  <div class="card">
 
-<div class="card">
+<img src="img/xbox-series-s.png" alt="Xbox Series S">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_5_logo.svg">
+<h2>Xbox Series S</h2>
 
-<h3>PlayStation 5 Slim</h3>
-
-<p class="preco-antigo">
-
-R$ 4.799
-
+<p class="antigo">
+De R$ 2.299,90
 </p>
 
 <p class="preco">
-
-R$ 2.999
-
+R$ 1.600
 </p>
 
-<button>Comprar</button>
+<p class="parcela">
+ou 12x de R$ 133,33 sem juros
+</p>
+
+<p style="color:#00ff84;font-weight:bold;">
+✔ Em estoque
+</p>
+
+<p style="margin-top:10px;">
+🔥 Restam apenas <b>12 unidades</b>
+</p>
+
+<a href="#" class="reserva">
+Reservar Agora
+</a>
 
 </div>
 
+
 <div class="card">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Xbox_one_logo.svg">
+<img src="img/xbox-series-x.png" alt="Xbox Series X">
 
-<h3>Xbox Series X</h3>
+<h2>Xbox Series X</h2>
 
-<p class="preco-antigo">
-
-R$ 4.499
-
+<p class="antigo">
+De R$ 3.999,90
 </p>
 
 <p class="preco">
-
-R$ 2.799
-
+R$ 2.300
 </p>
 
-<button>Comprar</button>
+<p class="parcela">
+ou 12x de R$ 191,66 sem juros
+</p>
+
+<p style="color:#00ff84;font-weight:bold;">
+✔ Em estoque
+</p>
+
+<p style="margin-top:10px;">
+🔥 Restam apenas <b>8 unidades</b>
+</p>
+
+<a href="#" class="reserva">
+Reservar Agora
+</a>
 
 </div>
 
+
 <div class="card">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Nintendo.svg">
+<img src="img/ps5-slim.png" alt="PS5 Slim">
 
-<h3>Nintendo Switch OLED</h3>
+<h2>PlayStation 5 Slim</h2>
 
-<p class="preco-antigo">
-
-R$ 2.899
-
+<p class="antigo">
+De R$ 4.799,90
 </p>
 
 <p class="preco">
-
-R$ 1.899
-
+R$ 2.300
 </p>
 
-<button>Comprar</button>
+<p class="parcela">
+ou 12x de R$ 191,66 sem juros
+</p>
+
+<p style="color:#00ff84;font-weight:bold;">
+✔ Em estoque
+</p>
+
+<p style="margin-top:10px;">
+🔥 Restam apenas <b>15 unidades</b>
+</p>
+
+<a href="#" class="reserva">
+Reservar Agora
+</a>
 
 </div>
 
@@ -356,15 +616,450 @@ R$ 1.899
 
 </section>
 
-<footer>
 
-© 2026 TecnoGamesBR
+<section style="padding:80px 8%; background:#111;">
+
+<h1 class="titulo">
+
+💳 Formas de Pagamento
+
+</h1>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
+
+<div class="info-box">PIX</div>
+
+<div class="info-box">VISA</div>
+
+<div class="info-box">MASTERCARD</div>
+
+<div class="info-box">ELO</div>
+
+<div class="info-box">BOLETO</div>
+
+<div class="info-box">MERCADO PAGO</div>
+
+</div>
+
+</section>
+
+
+
+<section style="padding:80px 8%;">
+
+<h1 class="titulo">
+
+⭐ Por que comprar na TecnoGamesBR?
+
+</h1>
+
+<div class="grid">
+
+<div class="info-box">
+
+<h3>🚚 Frete para todo Brasil</h3>
+
+<p>
+
+Enviamos para qualquer região do país.
+
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🔒 Compra Protegida</h3>
+
+<p>
+
+Pagamento realizado por gateway seguro.
+
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>📦 Pré-compra Garantida</h3>
+
+<p>
+
+Reserve seu console antes que o estoque acabe.
+
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>💬 Atendimento</h3>
+
+<p>
+
+Suporte rápido pelo WhatsApp.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section style="padding:80px 8%; background:#111;">
+
+<h1 class="titulo">
+
+⭐⭐⭐⭐⭐ Avaliações
+
+</h1>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>Lucas S.</h2>
+
+<p>
+
+★★★★★
+
+</p>
+
+<p>
+
+"Chegou rápido e bem embalado."
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Carlos M.</h2>
+
+<p>
+
+★★★★★
+
+</p>
+
+<p>
+
+"Preço excelente e atendimento muito bom."
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Fernanda A.</h2>
+
+<p>
+
+★★★★★
+
+</p>
+
+<p>
+
+"Reservei meu console e recebi todas as atualizações."
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- CONTADOR -->
+
+<section style="padding:80px 8%;background:#0d0d0d;text-align:center;">
+
+<h1 class="titulo">
+
+⏰ Promoção termina em
+
+</h1>
+
+<div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;">
+
+<div class="info-box">
+
+<h2 id="horas">24</h2>
+
+<p>Horas</p>
+
+</div>
+
+<div class="info-box">
+
+<h2 id="minutos">00</h2>
+
+<p>Minutos</p>
+
+</div>
+
+<div class="info-box">
+
+<h2 id="segundos">00</h2>
+
+<p>Segundos</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRÉ-COMPRA -->
+
+<section style="padding:90px 8%;text-align:center;">
+
+<h1 class="titulo">
+
+🔥 Reserve Agora e Garanta seu Console
+
+</h1>
+
+<p style="max-width:900px;margin:auto;font-size:18px;opacity:.8;line-height:35px;">
+
+Faça sua reserva enquanto houver disponibilidade em estoque.
+Assim que seu pagamento for confirmado, seu pedido será processado conforme a disponibilidade e as condições informadas pela loja.
+
+</p>
 
 <br><br>
 
-Os melhores preços em videogames, PCs Gamer e acessórios.
+<a href="#" class="btn btn-principal">
+
+QUERO RESERVAR AGORA
+
+</a>
+
+</section>
+
+
+<!-- PAGAMENTO -->
+
+<section style="padding:80px 8%;background:#111;">
+
+<h1 class="titulo">
+
+🔒 Pagamento Seguro
+
+</h1>
+
+<div class="grid">
+
+<div class="info-box">
+
+<h3>⚡ PIX</h3>
+
+<p>Pagamento instantâneo.</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>💳 Cartão</h3>
+
+<p>Parcelamento em até 12x.</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🏦 Boleto</h3>
+
+<p>Pagamento bancário.</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🛡 Compra Protegida</h3>
+
+<p>Transações realizadas por gateway seguro.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+
+<section style="padding:90px 8%;text-align:center;">
+
+<h1 class="titulo">
+
+📧 Receba Ofertas
+
+</h1>
+
+<p style="margin-bottom:30px;opacity:.8;">
+
+Cadastre seu e-mail e fique por dentro das próximas promoções.
+
+</p>
+
+<input
+type="email"
+placeholder="Digite seu e-mail"
+style="padding:18px;width:320px;border-radius:8px;border:none;outline:none;">
+
+<a href="#" class="reserva">
+
+Cadastrar
+
+</a>
+
+</section>
+
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/5500000000000"
+
+target="_blank"
+
+style="
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+background:#25D366;
+
+color:white;
+
+padding:18px;
+
+border-radius:50%;
+
+font-size:28px;
+
+text-decoration:none;
+
+box-shadow:0 0 20px rgba(37,211,102,.5);
+
+z-index:999;
+
+">
+
+💬
+
+</a>
+
+
+<!-- RODAPÉ -->
+
+<footer style="background:#111;padding:60px 8%;margin-top:50px;">
+
+<div class="grid">
+
+<div>
+
+<h2>TecnoGamesBR</h2>
+
+<p style="margin-top:20px;opacity:.7;">
+
+Sua loja especializada em consoles, PCs Gamer e acessórios.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Institucional</h3>
+
+<p>Quem Somos</p>
+
+<p>Política de Trocas</p>
+
+<p>Termos de Uso</p>
+
+<p>Privacidade</p>
+
+</div>
+
+<div>
+
+<h3>Atendimento</h3>
+
+<p>WhatsApp</p>
+
+<p>Email</p>
+
+<p>Contato</p>
+
+</div>
+
+<div>
+
+<h3>Pagamento</h3>
+
+<p>PIX</p>
+
+<p>Visa</p>
+
+<p>Mastercard</p>
+
+<p>Elo</p>
+
+<p>Mercado Pago</p>
+
+</div>
+
+</div>
+
+<hr style="margin:40px 0;border-color:#333;">
+
+<center>
+
+<p>
+
+© 2026 TecnoGamesBR - Todos os direitos reservados.
+
+</p>
+
+</center>
 
 </footer>
 
+
+<script>
+
+let tempo = 86400;
+
+setInterval(()=>{
+
+tempo--;
+
+let h=Math.floor(tempo/3600);
+
+let m=Math.floor((tempo%3600)/60);
+
+let s=tempo%60;
+
+document.getElementById("horas").innerHTML=h;
+
+document.getElementById("minutos").innerHTML=m;
+
+document.getElementById("segundos").innerHTML=s;
+
+},1000);
+
+</script>
+
 </body>
+
 </html>
